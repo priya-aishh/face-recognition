@@ -2,14 +2,13 @@ import cv2
 import os
 import numpy as np
 
-subjects = ["", "Person1_name", "Person2_name"]
+subjects = ["", "Marissa_Mayer", "Narendra_Modi"]
 
 def detect_face(img):
 
  gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
- #face_cascade = cv2.CascadeClassifier('C:\\Users\\priya\\OneDrive\\Documents\\Minor Project\\lbp_cascade_frontalface.xml')
- face_cascade = cv2.CascadeClassifier('C:\\Users\\priya\\OneDrive\\Documents\\Minor Project\\lbp_cascade_frontalface.xml')
+ face_cascade = cv2.CascadeClassifier('\lbp_cascade_frontalface.xml')
  faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
 
  if (len(faces) == 0):
